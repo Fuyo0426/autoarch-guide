@@ -353,6 +353,42 @@
   /* 補 header 高度讓 slide 不被遮住 */
   #deck { padding-top: 56px; }
 
+  /* ── 封面英雄 ── */
+  .hero-slide {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(52px, 11vw, 128px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 0;
+  }
+  .hero-sub {
+    font-family: var(--serif);
+    font-size: clamp(28px, 5.5vw, 64px);
+    letter-spacing: -0.01em;
+    color: var(--warm);
+    font-style: italic;
+    margin-bottom: 32px;
+  }
+  .hero-rule {
+    width: 60px; height: 2px;
+    background: var(--warm);
+    margin: 28px auto;
+  }
+  .hero-desc {
+    font-size: clamp(14px, 1.6vw, 18px);
+    color: var(--dim);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
   @media (max-width: 640px) {
     .cols { grid-template-columns: 1fr; gap: 24px; }
     .step-grid { grid-template-columns: 48px 1fr; gap: 0 20px; }
@@ -376,12 +412,12 @@
 <div id="deck">
 
   <!-- 01 COVER -->
-  <div class="slide active" id="s1">
-    <div class="slide-inner">
-      <p class="eyebrow">建築自動化　開源系統</p>
-      <h1>不懂 Git，<br><em>也能貢獻。</em></h1>
-      <div class="rule"></div>
-      <p class="lead">這份指南給所有建築師、設計師、法規專員。<br>三個步驟，用你已經會的方式，讓系統一起進化。</p>
+  <div class="slide hero-slide active" id="s1">
+    <div>
+      <h1 class="hero-title">建築自動化</h1>
+      <p class="hero-sub">開源系統</p>
+      <div class="hero-rule"></div>
+      <p class="hero-desc">給所有建築師、設計師、法規專員。<br>不懂 Git，也能一起讓系統進化。</p>
     </div>
   </div>
 
