@@ -309,16 +309,69 @@
     color: oklch(78% 0.01 240);
   }
 
+  /* ── Header ── */
+  #header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 56px;
+    border-bottom: 1px solid var(--rule);
+    background: oklch(97% 0.008 80 / 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .header-logo {
+    font-family: var(--serif);
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .header-logo span {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--warm);
+    font-weight: 500;
+  }
+
+  .header-right {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  /* 補 header 高度讓 slide 不被遮住 */
+  #deck { padding-top: 56px; }
+
   @media (max-width: 640px) {
     .cols { grid-template-columns: 1fr; gap: 24px; }
     .step-grid { grid-template-columns: 48px 1fr; gap: 0 20px; }
     .stat-row { gap: 24px; }
+    #header { padding: 0 20px; }
+    #progress { left: 20px; }
+    #nav { right: 20px; }
   }
 </style>
 </head>
 <body>
 
-<div class="corner">建築自動化　開源系統</div>
+<header id="header">
+  <div class="header-logo">
+    建築自動化
+    <span>開源系統</span>
+  </div>
+  <div class="header-right">協作指南</div>
+</header>
 
 <div id="deck">
 
